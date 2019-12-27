@@ -9,6 +9,8 @@
 ```
 composer globar required laravel/laravel
 
+composer create-project --prefer-dist laravel/laravel electohouse
+
 http.conf >
 
 <VirtualHost electohouse.local:1234>
