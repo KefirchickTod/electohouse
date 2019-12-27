@@ -15,13 +15,13 @@ http.conf >
 
 <VirtualHost electohouse.local:1234>
     ServerAdmin webmaster@m.asign.local
-    DocumentRoot "g:/server/html/electohouse/public/"
-    ServerName electohouse
+    DocumentRoot "g:/server/html/electohouse/public"
+    ServerName electohouse.local
     ErrorLog "g:/server/html/electohouse/public/electohouse.local-error.log"
     CustomLog "logs/electohouse.local-access.log" common
     AddHandler fcgid-script .php
     FcgidInitialEnv PHPRC "g:/server/php72"
-    <Directory "g:/server/html/electohouse/public/">
+    <Directory "g:/server/html/electohouse/public">
         AllowOverride All
             order allow,deny
             allow from all
@@ -36,8 +36,7 @@ http.conf >
             deny from none 
             Require all granted
         </Files>
-    </Directory>
-</VirtualHost>
+    </Directory
 
 in file host add 
 
