@@ -13,7 +13,7 @@ composer create-project --prefer-dist laravel/laravel electohouse
 
 http.conf >
 
-<VirtualHost electohouse.local:1234>
+<VirtualHost electohouse.local:80>
     ServerAdmin webmaster@m.asign.local
     DocumentRoot "g:/server/html/electohouse/public"
     ServerName electohouse.local
@@ -36,7 +36,8 @@ http.conf >
             deny from none 
             Require all granted
         </Files>
-    </Directory
+    </Directory>
+</VirtualHost>
 
 in file host add 
 
@@ -44,7 +45,10 @@ in file host add
 
 
 ```
-
+Якщо буде 500 помилка тоді в cmd написати  на наступне
+```
+php artisan key:generate
+```
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
