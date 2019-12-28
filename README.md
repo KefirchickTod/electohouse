@@ -44,6 +44,9 @@ in file host add
 127.0.0.1   electohouse.local
 
 
+in cmd 
+composer update
+
 ```
 Якщо буде 500 помилка тоді в cmd написати  на наступне
 ```

@@ -3,7 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
-
+electohouse.local-error.log
 .env.backup
 .phpunit.result.cache
 Homestead.json
