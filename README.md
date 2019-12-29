@@ -52,6 +52,13 @@ composer update
 ```
 php artisan key:generate
 ```
+##  БД
+
+Встановлення бд
+```
+php artisan migrat
+```
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
