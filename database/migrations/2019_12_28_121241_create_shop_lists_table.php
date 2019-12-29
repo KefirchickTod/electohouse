@@ -15,11 +15,36 @@ class CreateShopListsTable extends Migration
     {
         Schema::create('shop_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
+
+            $table->integer('categories_id')->unsigned();
             $table->integer('author_id')->unsigned();
-            $table->string('slug')->unsigned();
+            $table->integer('status');
+            $table->integer('manufacture_id')->unsigned();
+
+
+            $table->bigInteger("viewed")->unsigned()->default(0);
+
+
+            $table->string('slug');
             $table->string('title');
+
+            $table->text('description')->nullable();
+            $table->text("short_text");
+
+            $table->boolean('is_published')->default(false);
+
+            $table->timestamp("published_at")->nullable();
+
             $table->timestamps();
+            $table->softDeletes();
+
+
+        });
+
+        Schema::table('shop_lists', function (Blueprint $table){
+            $table->foreign("author_id")->references("id")->on("users");
+            $table->foreign("categories_id")->references("id")->on("shop_categories");
+            $table->index("is_published");
         });
     }
 
