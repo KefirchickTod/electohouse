@@ -14,21 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('rest', 'RestTestContoller')->names('restTest');
-Route::resource('list', 'Shop\ListController')->names('shopList');
-Route::get('/admin', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Shop', 'prefix' => 'shop'],function (){
+    Route::resource('lists', 'ListController')->names('shop.list');
 });
-Route::get('/shop', function () {
-    return view('welcome');
-});
-Route::get('/contact', function () {
-    return view('welcome');
-});
-Route::get('/about', function () {
-    return view('welcome');
-});
-Route::get('/login', function () {
-    return view('welcome');
-});
+
 

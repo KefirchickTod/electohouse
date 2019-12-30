@@ -15,7 +15,8 @@ class ListController extends BaseController
     public function index()
     {
         $item = ShopList::all();
-        return view('shop.lists.index', compact('item'));
+        dd($item[0]);
+       // return view('shop.lists.index', compact('item'));
     }
 
     /**
