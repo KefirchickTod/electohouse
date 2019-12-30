@@ -15,6 +15,10 @@ class CreateShopProductCommentsTable extends Migration
     {
         Schema::create('shop_product_comments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('comment');
+            $table->string('email');
+            $table->string('first_name');
+            $table->string('second_name');
             $table->timestamps();
         });
     }
