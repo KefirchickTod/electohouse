@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('rest', 'RestTestContoller')->names('restTest');
+Route::resource('list', 'Shop\ListController')->names('shopList');
 Route::get('/admin', function () {
     return view('welcome');
 });
