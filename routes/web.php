@@ -18,12 +18,16 @@ Route::group(['namespace' => 'Shop', 'prefix' => 'shop'],function (){
     Route::resource('lists', 'ListController')->names('shop.list');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+/***
+ * ADMIN
+ */
+Route::group(['namespace' => 'Shop\Admin', 'prefix' => 'admin/shop'],function (){
+    $method = ['index', 'edit', 'store', 'update', 'create'];
+    Route::resource('category', 'CategoriesController')->only($method)->names('shop.admin.categories');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+
