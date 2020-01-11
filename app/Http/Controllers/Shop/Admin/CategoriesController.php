@@ -76,7 +76,22 @@ class CategoriesController extends BaseAdminController
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = ShopCategory::find($id);
+        if(empty($item)){
+            return  back()->withErrors(['msg' => 'None note '.$id])->withInput();
+        }
+        $data = $request->all();
+        foreach ($data as $var => $value){
+            if(isset($item->$var)){
+                $item->$var = $value;
+            }
+        }
+        $result = $item->save();
+
+        if($result){
+            return redirect()->route('shop.admin.categories.edit', $item->id)->with(['success' => 'Success']);
+        }
+        return  back()->withErrors(['msg' => 'Error save'])->withInput();
     }
 
     /**
@@ -87,6 +102,6 @@ class CategoriesController extends BaseAdminController
      */
     public function destroy($id)
     {
-        //
+
     }
 }
