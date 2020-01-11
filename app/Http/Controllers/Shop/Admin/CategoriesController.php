@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Shop\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Shop\BaseController;
+use App\Models\ShopCategory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class CategoriesController extends BaseAdminController
@@ -15,7 +17,9 @@ class CategoriesController extends BaseAdminController
      */
     public function index()
     {
-        //
+        $pagination  = ShopCategory::paginate(5);
+
+        return view('shop.admin.categories.index', ['pagination' =>$pagination]);
     }
 
     /**
@@ -58,7 +62,9 @@ class CategoriesController extends BaseAdminController
      */
     public function edit($id)
     {
-        //
+        $item = ShopCategory::findOrFail($id);
+        $categoryList =  ShopCategory::all();
+        return view('shop.admin.categories.edit',compact('item', 'categoryList'));
     }
 
     /**
