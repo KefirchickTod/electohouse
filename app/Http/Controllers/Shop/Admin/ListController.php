@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shop\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Shop\BaseController;
+use App\Models\ShopList;
 use Illuminate\Http\Request;
 
 class ListController extends BaseAdminController
@@ -15,7 +16,9 @@ class ListController extends BaseAdminController
      */
     public function index()
     {
-        //
+        $pagination  = ShopList::paginate(15);
+
+        return view('shop.admin.lists.index', ['pagination' =>$pagination]);
     }
 
     /**

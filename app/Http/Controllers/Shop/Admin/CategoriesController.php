@@ -29,7 +29,8 @@ class CategoriesController extends BaseAdminController
      */
     public function create()
     {
-        //
+        $categoryList =  ShopCategory::all();
+        return view('shop.admin.categories.create',compact( 'categoryList'));
     }
 
     /**
@@ -40,7 +41,14 @@ class CategoriesController extends BaseAdminController
      */
     public function store(Request $request)
     {
-        //
+        $all = $request->all();
+        $category = new ShopCategory();
+        $category->title = $all['title'];
+        $category->slug = $all['slug'] ? \Str::slug($all['slug']) : \Str::slug($all['title']);
+        $category->parent_id = $all['parent_id'];
+        $category->description = $all['description'];
+        $category->save();
+        return redirect("/admin/shop/category");
     }
 
     /**

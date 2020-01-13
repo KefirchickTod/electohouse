@@ -29,5 +29,7 @@ Route::group(['namespace' => 'Shop\Admin', 'prefix' => 'admin/shop'],function ()
     $method = ['index', 'edit', 'store', 'update', 'create'];
     Route::resource('category', 'CategoriesController')->only($method)->names('shop.admin.categories');
 });
-
+Route::group(['namespace' => 'Shop\Admin', 'prefix' => 'admin/shop'],function (){
+    Route::resource('list', 'ListController')->names('shop.admin.lists');
+});
 
