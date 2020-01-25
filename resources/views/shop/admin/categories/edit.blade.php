@@ -49,7 +49,7 @@
                                 <input name="updated_at" id="updated_at" class="form-group" disabled value="{{$item->updated_at}}">
                             </div>
                             <div class="form-group">
-                                <label for="deleted_at">Created at</label>
+                                <label for="deleted_at">Deleted at</label>
                                 <input name="deleted_at" id="deleted_at" class="form-group" disabled value="{{$item->deleted_at}}" >
                             </div>
                         </div>
