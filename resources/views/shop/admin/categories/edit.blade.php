@@ -6,6 +6,13 @@
         @method('PATCH')
         @csrf
         <div class="container">
+            @if($errors->any())
+                <script>alert("ERROR!")</script>
+            @endif
+            @if(session('success'))
+                    <script>alert("success!")</script>
+
+                @endif
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">

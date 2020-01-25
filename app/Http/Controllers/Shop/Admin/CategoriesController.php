@@ -89,12 +89,8 @@ class CategoriesController extends BaseAdminController
             return  back()->withErrors(['msg' => 'None note '.$id])->withInput();
         }
         $data = $request->all();
-        foreach ($data as $var => $value){
-            if(isset($item->$var)){
-                $item->$var = $value;
-            }
-        }
-        $result = $item->save();
+        //add method fill for save date
+        $result = $item->fill($data)->save();
 
         if($result){
             return redirect()->route('shop.admin.categories.edit', $item->id)->with(['success' => 'Success']);

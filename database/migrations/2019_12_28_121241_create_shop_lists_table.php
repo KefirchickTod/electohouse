@@ -21,6 +21,9 @@ class CreateShopListsTable extends Migration
             $table->integer('status');
             $table->integer('manufacture_id')->unsigned();
 
+            $table->integer('price')->unsigned();
+
+
 
             $table->bigInteger("viewed")->unsigned()->default(0);
 

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-                    <a class="btn btn-primary" href="{{route('shop.admin.categories.create')}}">Add</a>
+                    <a class="btn btn-primary" href="{{route('shop.admin.lists.create')}}">Add</a>
                 </nav>
                 <div class="card">
                     <div class="card-header">

@@ -17,5 +17,6 @@ $factory->define(\App\Models\ShopList::class, function (Faker $faker) {
         'description' => "'$faker->text'",
         'short_text' => "'$faker->paragraph'",
         'is_published' => 1,
+        'price' => rand(10, 5000),
     ];
 });

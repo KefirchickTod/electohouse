@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Shop\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Shop\BaseController;
+use App\Models\ShopCategory;
 use App\Models\ShopList;
+use App\Models\ShopManufacture;
 use Illuminate\Http\Request;
 
 class ListController extends BaseAdminController
@@ -28,7 +30,9 @@ class ListController extends BaseAdminController
      */
     public function create()
     {
-        //
+        $categoriesList = ShopCategory::all();
+
+        return view('shop.admin.lists.create', compact('categoriesList', 'manufactureList'));
     }
 
     /**
@@ -39,7 +43,7 @@ class ListController extends BaseAdminController
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
