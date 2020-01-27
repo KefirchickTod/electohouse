@@ -1,6 +1,6 @@
 @include('layouts.app')
 @section('content')
-    <form method="POST" action="{{route('shop.admin.categories.store')}}">
+    <form method="POST" action="{{route('shop.admin.categories.store')}}" enctype="multipart/form-data">
 
         @csrf
         <div class="container">

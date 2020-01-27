@@ -43,7 +43,8 @@ class ListController extends BaseAdminController
      */
     public function store(Request $request)
     {
-        dd($request);
+        $path = $request->file('image')->store('/upload/shop/product');
+        dd($path);
     }
 
     /**

@@ -1,7 +1,6 @@
-@include('layouts.app')
+@extends('layouts.app')
 @section('content')
-
-    <form method="POST" action="{{route('shop.admin.lists.store')}}">
+    <form method="POST" action="{{route('shop.admin.lists.store')}}" enctype="multipart/form-data">
 
         @csrf
         <div class="container">
@@ -28,7 +27,7 @@
                             </div>
                             <div class="form-group">
                                 <label for ='image'>Image</label>
-                                <input type="file" id="price">
+                                <input type="file" id="image" name = 'image'>
                             </div>
                             <div class="form-group">
                                 <label for="parent_id">Parent</label>
@@ -56,3 +55,4 @@
         </div>
 
     </form>
+@stop

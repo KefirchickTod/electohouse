@@ -2,7 +2,7 @@
 @include('layouts.app')
 @section('content')
     @php /** @var \App\Models\ShopCategory $item */ @endphp
-    <form method="POST" action="{{route('shop.admin.categories.update', $item->id)}}">
+    <form method="POST" action="{{route('shop.admin.categories.update', $item->id)}}"  enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="container">
